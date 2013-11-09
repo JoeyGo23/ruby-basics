@@ -18,18 +18,20 @@ end
 
 
 if score < 17
-	puts "score is #{score} - LESS than 17"
+	puts "score is #{score} holding #{hand.join(",")} - LESS than 17"
 	extra_card = deck.sample
 	hand << extra_card
 	score += points[extra_card]
-
-elsif score > 21
+	puts "You are holding - #{hand.join(",")}  Score is #{score}"
+end
+if score > 21
 	puts "score is #{score} - GREATER than 21"
 	puts "B U S T E D"
+	puts "You are holding - #{hand.join(",")}  Score is #{score}"
 end
 
 puts "Chal 4"
-puts "You are holding - #{hand.join(",")}  Score is #{score}"
+
 
 
 
