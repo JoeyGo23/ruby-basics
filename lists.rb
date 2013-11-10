@@ -63,7 +63,9 @@ favorites["song"] = "Red Rain"
 #
 # should display the list of the names of your friends.
 
-favorites["friends"] =
+favorites["friends"] = %w(Mohammad VenVictor Alan Neal)
+puts favorites["friends"]
+
 
 
 

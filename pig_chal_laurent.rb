@@ -16,34 +16,6 @@
 # 2. If a word starts with a vowel, simply add "ay" to the end of the word.
 
 # After you can encode, try to decode!
-vowels = %w(a e i o u)
-
-word = ""
-def piggy_trans
-	word = gets.downcase.chomp
-	puts "You have entered #{word}."
-							
-	first_letter = word[0]					#get first letter of word
-	puts "First letter is #{first_letter}"
-
-	if first_letter.start_with?("a","e","i","o","u")
-		piggy_word = word + "ay"
-		puts "New word is #{piggy_word}"
-	else
-		piggy_word = word[1..50] + first_letter + "ay"
-		puts piggy_word
-	end
-
-end
-
-piggy_trans
-
-
-
-
-
-
-
 
 # ----------------------------------------------------
 
@@ -59,3 +31,20 @@ piggy_trans
 # ruby = "Ruby gives us lots of data containers to choose from"
 
 # oodgay ucklay!
+
+puts "Enter a word or a phrase to be encoded in Pig Latin:"
+phrase = gets.downcase.chomp
+
+# List words contained in the phrase
+words = phrase.split(" ")
+
+pig_latin = ""
+words.each do |word|
+  if word.index(/[aeiou]/) != 0                         # If a word starts with a consonant, move it to the end of the word, and then add "ay"
+    pig_latin << word.slice!(1..-1) + word[0] + "ay "
+  else
+    pig_latin << word + "ay "                           # If a word starts with a vowel, simply add "ay" to the end of the word.
+  end
+end
+
+puts "Pig Latin translation: #{pig_latin}"
