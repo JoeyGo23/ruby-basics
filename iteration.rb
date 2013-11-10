@@ -270,15 +270,15 @@ list.each { |name| puts name }
 # Your output should look like this:
 #  Your total with tax is $4455.54.
 
-shopping_cart = [
+@shopping_cart = [
   {'name' => "iPad 2", 'price' => 499, 'quantity' => 2},
   {'name' => "iMac 27", 'price' => 1699, 'quantity' => 1},
   {'name' => "MacBook Air 13", 'price' => 1299, 'quantity' => 1}
   ]
 
-sales_tax = {"IL" => 0.115, "IN" => 0.09, "MI" => 0.06, "WI" => 0.056}
+@sales_tax = {"IL" => 0.115, "IN" => 0.09, "MI" => 0.06, "WI" => 0.056}
 
-params = {
+@params = {
   'name' => "Patrick McProgrammerson",
   'address1' => "222 W. Merchandise Mart Plaza",
   'address2' => "12th Floor",
@@ -290,12 +290,22 @@ params = {
 # Hint: First try doing it yourself by hand, and notice the steps you are taking. You will have to translate these instructions into Ruby.
 
 # Solution:
+def print_total
+  subtotal=0
+  @shopping_cart.each { |cart_items|
+              puts cart_items
+              product_total = cart_items["price"] * cart_items["quantity"]
+              puts "$ #{product_total}"
+              subtotal += product_total
+              puts subtotal
+  }
 
+  tax_amount = subtotal * @sales_tax["WI"]
+  total = subtotal + tax_amount
+  puts "$ #{total}"
+end
 
-
-
-
-
+print_total
 
 
 
