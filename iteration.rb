@@ -251,8 +251,8 @@ puts jeffnew
  # Raghu Betina is from Goshen.
 
 # Solution:
- names = %w(Neal Sales-griffin is from Chicago. Mike Mcgee is from Freeport. Jeff Cohen is from Skokie. Raghu Betina is from Goshen.)
-put names
+list = ["Neal Sales-griffin is from Chicago.", "Mike Mcgee is from Freeport. ","Jeff Cohen is from Skokie.", "Raghu Betina is from Goshen."]
+list.each { |name| puts name }
 
 
 
