@@ -21,6 +21,11 @@
 #  howdy 4
 # using the .times method. Try adding to the code above.
 
+
+5.times do |number|
+  puts "Howdy #{number}"
+end
+
 # Hint: Try creating a placeholder variable and changing it each time through to keep track of where you are.
 
 # Your code goes here:
@@ -80,9 +85,9 @@
 
 # Your code goes here:
 
-# 10.times do |n|
-#   puts n
-# end
+10.times do |n|
+  puts n ** 2
+end
 
 
 
@@ -156,7 +161,9 @@ names = ["Neal", "Mike", "Jeff", "Raghu", "Vince"]
 #   puts "*** #{names[position]} ***"
 # end
 
-
+names.each do |name|
+  puts name
+end
 
 
 
@@ -213,6 +220,15 @@ student4 = { "first" => "raghu", "last" => "betina", "hometown" => "goshen" }
 students = [student1, student2, student3, student4]
 
 # How would you access Jeff's hometown using the students array?
+jeff = students[2]
+home = jeff["hometown"]
+puts "Jeff's hometown is #{home}."
+
+jeffnew = students[2]["hometown"]
+puts jeffnew
+
+
+
 
 # Your code goes here:
 
@@ -229,13 +245,14 @@ students = [student1, student2, student3, student4]
 
 # Challenge: Automate the task of displaying the students' names along with their hometowns. Use the .each method. Your output should look like this:
 
-#  Neal Sales-griffin is from Chicago.
-#  Mike Mcgee is from Freeport.
-#  Jeff Cohen is from Skokie.
-#  Raghu Betina is from Goshen.
+ # Neal Sales-griffin is from Chicago.
+ # Mike Mcgee is from Freeport.
+ # Jeff Cohen is from Skokie.
+ # Raghu Betina is from Goshen.
 
 # Solution:
-
+ names = %w(Neal Sales-griffin is from Chicago. Mike Mcgee is from Freeport. Jeff Cohen is from Skokie. Raghu Betina is from Goshen.)
+put names
 
 
 
